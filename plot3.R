@@ -20,7 +20,7 @@ x<-cbind(weekday[z$wday],household)
 ## axes are modified seperately by axes function
 
 png("plot3.png",480,480)
-plot(household$Sub_metering_1,xaxt = 'n',type = 'l', Xlab = "",ylab = 'Energy Sub metering')
+plot(household$Sub_metering_1,xaxt = 'n',type = 'l', xlab = "",ylab = 'Energy Sub metering')
 lines(household$Sub_metering_2,col = 'red')
 lines(household$Sub_metering_3,col = 'blue')
 axis(side = 1,at = c(1,1440,2880),labels = c('Thu','Fri','Sat'))
