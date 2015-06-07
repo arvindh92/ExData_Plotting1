@@ -27,18 +27,18 @@ plot(household$Global_active_power,xaxt = 'n',type = 'l', xlab = '',ylab = 'Gloa
 axis(side = 1,at = c(1,1440,2880),labels = c('Thu','Fri','Sat'))
 
 #plot(1,2)
-plot(household$Voltage,xaxt = 'n',type = 'l', xlab = 'datetime',ylab = 'Gloal active power(Kilowatts)')
+plot(household$Voltage,xaxt = 'n',type = 'l', xlab = 'datetime',ylab = 'Voltage')
 axis(side = 1,at = c(1,1440,2880),labels = c('Thu','Fri','Sat'))
 
 #plot(2,1)
-plot(household$Sub_metering_1,xaxt = 'n',type = 'l', xlab = "",ylab = 'Energy Sub metering')
+plot(household$Sub_metering_1,xaxt = 'n',type = 'l', xlab = "",ylab = 'Energy sub metering')
 lines(household$Sub_metering_2,col = 'red')
 lines(household$Sub_metering_3,col = 'blue')
 axis(side = 1,at = c(1,1440,2880),labels = c('Thu','Fri','Sat'))
 legend('topright',c('Sub_metering_1','Sub_metering_2','Sub_metering_3'), col = c('black','red','blue'), lty =1)
 
 #plot(2,2)
-plot(household$Global_reactive_power,xaxt = 'n',type = 'l', xlab = 'datetime',ylab = 'Gloal active power(Kilowatts)')
+plot(household$Global_reactive_power,xaxt = 'n',type = 'l', xlab = 'datetime',ylab = 'Gloal reactive power')
 axis(side = 1,at = c(1,1440,2880),labels = c('Thu','Fri','Sat'))
 
 dev.off()
