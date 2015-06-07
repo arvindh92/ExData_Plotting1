@@ -1,0 +1,10 @@
+library(data.table)
+library(grDevices)
+setwd("I:\\DATA_Analysis_course\\Exploratory analysis\\Project 1\\ExData_Plotting1")
+household <- fread("I:\\DATA_Analysis_course\\Exploratory analysis\\Project 1\\household_power_consumption.txt",sep=";",nrows = 2880 ,skip = "1/2/2007",na.strings = '?')
+columnnames <- fread("I:\\DATA_Analysis_course\\Exploratory analysis\\Project 1\\household_power_consumption.txt",sep=";",nrows = 1 )
+colnames(household)<-colnames(columnnames)
+png("plot1.png",480,480)
+hist(household$Global_active_power,col = 'red')
+dev.off()
+
