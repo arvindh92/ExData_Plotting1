@@ -11,9 +11,15 @@ household <- fread("I:\\DATA_Analysis_course\\Exploratory analysis\\Project 1\\h
 columnnames <- fread("I:\\DATA_Analysis_course\\Exploratory analysis\\Project 1\\household_power_consumption.txt",sep=";",nrows = 1 )
 colnames(household)<-colnames(columnnames)
 
-## Plot using 'hist' function and save using 'png' function
+weekday <- c('sunday','monday','tuesday','wednesday','thursday','friday','saturday')
+z<-as.POSIXlt(strptime(household$Date,'%d/%m/%Y'))
+x<-cbind(weekday[z$wday],household)
 
-png("plot1.png",480,480)
-hist(household$Global_active_power,col = 'red',main = 'Global Active Power',xlab ='Global Active Power (kilowatts)' )
+
+## Plot using 'plot' function and save using 'png' function
+## axes are modified seperately by axes function
+
+png("plot2.png",480,480)
+plot(household$Global_active_power,xaxt = 'n',type = 'l', Xlab = NULL,ylab = 'Gloal active power(Kilowatts)')
+axis(side = 1,at = c(1,1440,2880),labels = c('Thu','Fri','Sat'))
 dev.off()
-
